@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Words Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Randomly Generated Words</h1>
+    <p id="randomWords"></p>
+
+    <script>
+        // Function to generate a random word
+        function generateRandomWord() {
+            const words = ['Sun', 'Moon', 'Star', 'Ocean', 'Mountain', 'Forest', 'River', 'Valley', 'Rainbow', 'Cloud'];
+            const randomIndex = Math.floor(Math.random() * words.length);
+            return words[randomIndex];
+        }
+
+        // Function to display three random words
+        function displayRandomWords() {
+            const randomWordsElement = document.getElementById('randomWords');
+            const word1 = generateRandomWord();
+            const word2 = generateRandomWord();
+            const word3 = generateRandomWord();
+
+            randomWordsElement.textContent = `Random Words: ${word1}, ${word2}, ${word3}`;
+        }
+
+        // Call the displayRandomWords function when the page loads
+        window.onload = displayRandomWords;
+    </script>
+</body>
+</html>
